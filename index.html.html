@@ -1,0 +1,281 @@
+
+
+
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<title>Inline Image Slider</title>
+</head>
+
+<style>
+
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+}
+/* Top Bar */
+
+.menu-btn{
+    font-size:24px;
+    cursor:pointer;
+    margin-right:15px;
+}
+
+
+/* Side Menu */
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-260px;
+    width:260px;
+    height:100%;
+    background:#1f2933;
+    color:white;
+    transition:0.3s;
+    z-index:1000;
+    padding-top:20px;
+}
+.sidebar.active{
+    left:0;
+}
+
+.sidebar h3{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px 20px;
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid #333;
+}
+.sidebar a:hover{
+    background:#374151;
+}
+
+/* Close button */
+.close-btn{
+    text-align:right;
+    padding:10px 20px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    display:none;
+    z-index:900;
+}
+.overlay.active{
+    display:block;
+}
+
+/* Content */
+.content{
+    padding:20px;
+}
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:15px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px 10px;
+    text-align:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    position:relative;
+}
+
+.A{
+    height:70px;
+    background:#5f63c6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.B{
+    position:absolute;
+    left:20px;
+    font-size:26px;
+    color:white;
+ }
+ 
+ 
+ a {
+    text-decoration: none; /* underline દૂર */
+    color: blue; /* લિંક કલર જરૂર મુજબ બદલો */
+}
+
+.k{padding-left:40px;
+padding-right:40px;}
+</style>
+<body>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="closeMenu()">✖</div>
+   <img  class="k" height="170px" width="170px" src="D:\Atmiya university\logo-removebg-preview.png"><br><br>
+   <h3>ATMIYA UNIVERSITY</h3>
+   
+    <a href="course.html">🎓 Course</a>
+    <a href="cos.html"> <i style="color:#ff9800;" class="fas fa-book">&nbsp;&nbsp;</i>Course Selection</a>
+	
+    <a href="t2.html">📅 Time Table Examination</a>
+  
+    <a href="Fe.html">₹ Fess</a>
+    
+	<a href="Holidays.html"> <i style="color:#ff9800;  font-size:17px;" class="fa-solid fa-umbrella-beach">&nbsp;&nbsp;  </i>Holiday</a>
+   <a href="it at.html">🏢 &nbsp;&nbsp; Placement</a>
+   
+</div>
+
+
+
+
+
+
+
+
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- Header -->
+<div class="A">
+    <span class="B" onclick="openMenu()">☰</span>
+    <h2 style="color:white;">ATMIYA UNIVERSITY</h2>
+</div>
+<br>
+
+<div>
+</div>
+
+
+
+
+<div style="display:flex;align-items:center;gap:130px;padding:20px;flex-wrap:wrap;justify-content:center;">
+
+    <!-- Left Image -->
+    <img src="D:\uni3\swr.png" style="width:250px;height:250px;object-fit:cover;border-radius:10px;">
+
+    <!-- Center Slider -->
+    <div style="width:350px;height:230px;position:relative;overflow:hidden;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+
+        <img src="D:\university\atmiya.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;opacity:1;">
+        <img src="D:\uni3\r.jpeg" style="width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;">
+        <img src="D:\uni3\c.jpeg" style="width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;">
+        <img src="D:\uni3\n.jpeg" style="width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;">
+        <img src="D:\uni3\l.jpeg" style="width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;">
+		<img src="D:\uni3\cl.jpeg" style="width:100%;height:100%;object-fit:cover;position:absolute;opacity:0;">
+
+    </div>
+
+    <!-- Right Image -->
+    <img src="D:\uni3\swrr2.png" style="width:250px;height:250px;object-fit:cover;border-radius:10px;">
+
+</div>
+
+</div>
+<br>
+<div class="menu">
+    <div class="card">
+        <span></span>
+       <a href="t2.html">📅</a>    
+    <a href="t2.html"><p style="color:black;"> Time Table Examination</p></a>
+    </div>
+
+    <div class="card">
+         <a href="it at.html"> 🏢
+     <p style="color:black;">Placement</p></a>
+    </div>
+
+    <div class="card">
+  
+   <a href="course.html">🎓</a>    
+    <a href="course.html"><p style="color:black;">Cours</p></a>  
+    </div>
+
+    <div class="card">
+<a href="fess.html">₹</a>    
+    <a href="fe.html"><p style="color:black;">Fess</p></a>
+	</div>
+
+   
+ <div class="card">
+   <a href="cos.html"> <i style="color:#ff9800;" class="fas fa-book"></i>
+    <p style="color:black;">Course Selection</p> </a>
+    </div>
+   
+   
+
+    <div class="card">
+       <a href="Holidays.html"> <i style="color:#ff9800;  font-size:17px;" class="fa-solid fa-umbrella-beach"></i></a>
+    <a href="Holidays.html"><p style="color:black;">Holidays</p></a>
+        
+	
+    </div>
+</div>
+
+
+
+
+<script>
+function openMenu(){
+    document.getElementById("sidebar").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu(){
+    document.getElementById("sidebar").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+
+
+
+
+
+
+
+
+
+let imgs = document.querySelectorAll("div div img");
+let i = 0;
+
+setInterval(() => {
+    imgs[i].style.opacity = "0";
+    i = (i + 1) % imgs.length;
+    imgs[i].style.opacity = "1";
+}, 3000);
+</script>
+
+</body>
+</html>
+
+
+
+
